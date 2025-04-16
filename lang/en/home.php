@@ -22,10 +22,10 @@ return [
     'Join Us'=>'Join Us',
     'Register Now'=>'Register Now',
     'Send'=>'Send',
-    'Mobile number verification'=>'Mobile Number verification',
-    'Join as designer'=>'Join AS Designer',
+    'Mobile Number Verification'=>'Mobile Number Verification',
+    'Join as a Designer'=> 'Join as a Designer',
     'My Orders'=>'My Orders',
-    'dashboard'=>'Dashboard',
+    'Dashboard'=>'Dashboard',
 
 
 

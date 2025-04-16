@@ -1,19 +1,19 @@
 <?php
 return [
     'statuses' => [
-        'pending' => 'قيد الانتظار',
-        'completed' => 'مكتمل',
-        'canceled' => 'ملغى',
-        'open' => 'مفتوح',
-        'first_payment_done' => 'تمت الدفع الأول',
-        'second_payment_done' => 'تمت الدفع الثاني'
+        'Pending' => 'قيد الانتظار',
+        'Completed' => 'مكتمل',
+        'Canceled' => 'ملغى',
+        'Open' => 'مفتوح',
+        'First_payment_done' => 'تمت الدفع الأول',
+        'Second_payment_done' => 'تمت الدفع الثاني'
     ],
 
     'order_statuses' => [
-    'accepted' => 'مقبول',
-    'rejected' => 'مرفوض',
-    'closed' => 'مغلق',
-    'pending' => 'قيد الانتظار'
+    'Accepted' => 'مقبول',
+    'Rejected' => 'مرفوض',
+    'Closed' => 'مغلق',
+    'Pending' => 'قيد الانتظار'
 ]
   ,
 

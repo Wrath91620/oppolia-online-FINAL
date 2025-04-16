@@ -22,10 +22,10 @@ return [
     'Join Us'=>'انضم إلينا ',
     'Register Now'=>'سجل الآن',
     'Send'=>'ارسال',
-    'Mobile number verification'=>'التحقق من رقم الجوال',
-    'Join as designer'=>'انضم كمصمم',
+    'Mobile Number Verification'=>'التحقق من رقم الجوال',
+    'Join as a Designer'=>'انضم كمصمم',
     'My Orders'=>'طلباتي',
-    'dashboard'=>'لوحة التحكم',
+    'Dashboard'=>'لوحة التحكم',
 
 
 ];

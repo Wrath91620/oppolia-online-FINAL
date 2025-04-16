@@ -24,7 +24,7 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link d-flex justify-content-between align-items-center" href="#AboutOppolia">
-                    عن أوبوليا أون لاين <i class="bx bx-chevron-left"></i>
+                    عن اوبوليا اونلاين <i class="bx bx-chevron-left"></i>
                 </a>
             </li>
             <li class="nav-item">
