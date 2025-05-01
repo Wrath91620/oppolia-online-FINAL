@@ -63,7 +63,7 @@
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="client_budget" class="form-label">ما هي ميزانية الزبون؟</label>
+                                    <label for="client_budget" class="form-label">ما هي ميزانية العميل؟</label>
                                     <input type="number" class="form-control" id="client_budget" name="client_budget">
                                 </div>
 
@@ -151,12 +151,12 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label">معلومات عامة عن الزبون والموقع</label>
+                                        <label class="form-label">معلومات عامة عن العميل والموقع</label>
                                         <textarea name="general_info" class="form-control" rows="3"></textarea>
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label">استفسارات الزبون</label>
+                                        <label class="form-label">استفسارات العميل</label>
                                         <textarea name="customer_concerns" class="form-control" rows="3"></textarea>
                                     </div>
 

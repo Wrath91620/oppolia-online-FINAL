@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('order_id'); // مرتبط بالطلب
 
-            $table->boolean('is_verified')->default(false)->nullable(); // هل تم التحقق من الزبون
+            $table->boolean('is_verified')->default(false)->nullable(); // هل تم التحقق من العميل
             $table->timestamp('meeting_time')->nullable(); // موعد اللقاء
             $table->timestamps();
 

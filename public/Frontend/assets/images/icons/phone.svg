@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="57.148" height="57.181" viewBox="0 0 57.148 57.181">
+  <g id="ic-contact-phone" transform="translate(1.648 1.646)">
+    <g id="ic-contact-phone-2" data-name="ic-contact-phone" transform="translate(-3.461 -3.095)" opacity="0.81">
+      <path id="Path_89" data-name="Path 89" d="M4.364,47.789l7.462,7.462a6.244,6.244,0,0,0,8.929,0L25,51a6.244,6.244,0,0,0,0-8.836l-2.779-2.81h0a51.453,51.453,0,0,1,17.609-17.64h0l2.779,2.81a6.244,6.244,0,0,0,8.836,0l4.184-4.152a6.244,6.244,0,0,0,0-8.836L48.167,4.017a3.122,3.122,0,0,0-3.934-.406h0A143.618,143.618,0,0,0,3.989,43.855h0a3.122,3.122,0,0,0,.375,3.934Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+    </g>
+  </g>
+</svg>

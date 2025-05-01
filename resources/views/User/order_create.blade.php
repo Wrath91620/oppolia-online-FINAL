@@ -449,15 +449,36 @@
         var map, marker, geocoder, autocomplete;
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 24.7136, lng: 46.6753 },
+                center: { lat: 24.7136, lng: 46.6753 }, // المركز الابتدائي (الرياض مثلاً)
                 zoom: 8
             });
             geocoder = new google.maps.Geocoder();
 
+            // ✅ جلب موقع المستخدم الحالي
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        var userLocation = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        map.setCenter(userLocation);
+                        map.setZoom(15);
+                        placeMarker(userLocation, map);
+                        geocodeLatLng(userLocation);
+                    },
+                    function () {
+                        console.warn("لم يتم السماح بالحصول على الموقع.");
+                    }
+                );
+            } else {
+                alert("المتصفح لا يدعم تحديد الموقع الجغرافي.");
+            }
+
+            // بقية الكود نفسه...
             map.data.loadGeoJson('/saudi-arabia-with-regions_1509.geojson', null, function (features) {
                 map.data.addListener('click', function (event) {
                     var regionName = event.feature.getProperty('name');
-                  //  alert('تم النقر على منطقة: ' + regionName);
                     document.getElementById('region_name').value = regionName;
                     placeMarker(event.latLng, map);
                     geocodeLatLng(event.latLng);
@@ -487,6 +508,7 @@
                 geocodeLatLng(place.geometry.location);
             });
         }
+
 
         function checkRegionAndPlaceMarker(latLng, map) {
             let isInsideRegion = false;

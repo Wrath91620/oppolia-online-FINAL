@@ -256,11 +256,11 @@ class SalesController extends Controller
         // تحديث حالة الدفعة وإرسال الإشعارات المطلوبة بناءً على الحالة
         if ($validatedData['status'] == 'awaiting_customer_payment') {
             $installment->update(['status' => 'awaiting_customer_payment']);
-            if ($order->processing_stage == 'تم إرسال إيصال الدفعة الأولى من قبل الزبون') {
+            if ($order->processing_stage == 'تم إرسال إيصال الدفعة الأولى من قبل العميل') {
                 $order->update(['processing_stage' => 'تم إرسال التصميم النهائي مع العقد وتفاصيل الدفعة الأولى']);
-            } elseif ($order->processing_stage == 'تم إرسال إيصال الدفعة الثانية من قبل الزبون') {
+            } elseif ($order->processing_stage == 'تم إرسال إيصال الدفعة الثانية من قبل العميل') {
                 $order->update(['processing_stage' => 'تم إرسال تفاصيل الدفعة الثانية']);
-            } elseif ($order->processing_stage == 'تم إرسال إيصال الدفعة الثالثة من قبل الزبون') {
+            } elseif ($order->processing_stage == 'تم إرسال إيصال الدفعة الثالثة من قبل العميل') {
                 $order->update(['processing_stage' => 'تم إرسال تفاصيل الدفعة الثالثة']);
             }
 
@@ -283,7 +283,7 @@ class SalesController extends Controller
         } elseif ($validatedData['status'] == 'paid') {
             $installment->update(['status' => 'paid']);
 
-            if ($order->processing_stage == 'تم إرسال إيصال الدفعة الأولى من قبل الزبون') {
+            if ($order->processing_stage == 'تم إرسال إيصال الدفعة الأولى من قبل العميل') {
                 $firstInstallment = $sale->installments()->where('installment_number', 1)->first();
                 $percentage = ($firstInstallment->installment_amount / $sale->price_after_discount) * 100;
                 $sale->update([
@@ -293,7 +293,7 @@ class SalesController extends Controller
                     'status'=>'first_payment_done', ]);
                 $order->update(['processing_stage' => 'تم تسديد الدفعة الأولى']);
 
-            } elseif ($order->processing_stage == 'تم إرسال إيصال الدفعة الثانية من قبل الزبون') {
+            } elseif ($order->processing_stage == 'تم إرسال إيصال الدفعة الثانية من قبل العميل') {
 
                 // حساب مجموع الدفعتين الأولى والثانية
                 $totalFirstAndSecondPayments = $sale->installments()
@@ -310,7 +310,7 @@ class SalesController extends Controller
 
 
 
-            } elseif ($order->processing_stage == 'تم إرسال إيصال الدفعة الثالثة من قبل الزبون') {
+            } elseif ($order->processing_stage == 'تم إرسال إيصال الدفعة الثالثة من قبل العميل') {
 
                 $order = $sale->order;
                 $designer = auth()->user()->designer;

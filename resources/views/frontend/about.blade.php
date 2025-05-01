@@ -1,17 +1,26 @@
 @extends('layouts.Frontend.mainlayoutfrontend')
 @section('title')عن اوبوليا @endsection
 @section('content')
+<style> 
 
+ .card-height { 
+    height: 300px;
+    border-radius: 25px !important; 
+ }
+ .text-green { 
+    color: rgba(10, 71, 64, 1);
+ }
+</style>
 <div class="container-fluid about-section position-relative">
     <!-- Banner Image (Full Width) -->
     <div class="row">
         <div class="col-12 p-0">
-            <img src="{{ asset('Frontend/assets/images/banners/About-Banner.png') }}" alt="About Us Banner" class="img-fluid about-image">
+            <img src="{{ asset('Frontend/assets/images/banners/About-Banner.png') }}" alt="About Us Banner" class="img-fluid">
         </div>
     </div>
     <!-- Centered Text Overlay -->
     <div class="about-text-overlay">
-        <h1 class="about-text">عن اوبوليا أون لاين</h1>
+        <h1 class="about-text">عن اوبوليا اون لاين</h1>
     </div>
 </div>
 
@@ -19,7 +28,7 @@
 <section  class="container-fluid">
     <div class="row p-4">
         <!-- Sidebar Column -->
-        <div class="col-lg-3 order-lg-first d-none d-lg-block" dir="rtl">
+        <div class="col-lg-2 order-lg-first d-none d-lg-block" dir="rtl">
     <aside class="sticky-sidebar">
         <ul class="nav flex-column">
             <li class="nav-item">
@@ -75,7 +84,7 @@
         <div class="col-lg-9">
             <!-- About Section -->
             <div id="AboutOppolia" class="col-lg-12 col-md-12 mb-3 mb-lg-5  " dir="rtl">
-                <h2 class="about-title">عن أوبوليا أون لاين</h2>
+                <h2 class="about-title">عن اوبوليا اونلاين</h2>
                 <h3 class="about-subtitle">عالم من الأناقة والتميز.</h3>
                 <p class="about-para">
                     نفتخر في اوبوليا بتقديم أفضل وأرقى منتجات أثاث المنزل المخصصة في السوق. لدينا أكثر من 30 عاماً من الخبرة في تلبية احتياجات عملائنا وجعل منازلهم أكثر جمالاً. نؤمن بأن المنزل هو مكان الراحة والتعبير عن الذات. لذلك، نسعى دائماً لتحويل أفكار وأحلام عملائنا إلى واقع. نسعى لتقديم تجربة تسوق فريدة تنعكس فيها الأناقة والرفاهية في كل تفصيل.
@@ -91,7 +100,7 @@
             <!-- Our Brand Section -->
             <div id="Brand" class="row m-4 mb-3 mb-lg-5" style="overflow: visible;">
                 <div class="col-lg-12 col-md-12 col-sm-12 section-header">
-                    <h2 class="section-about-title">علامتنا التجارية</h2>
+                    <h2 class="section-about-title" style="background-image: url('public/Frontend/assets/images/gallery/LogoAR.png');">علامتنا التجارية</h2>
                     <p class="section-description">
                         تحتل مجموعتنا رأس قائمة العلامات التجارية المرموقة في هذا المجال،
                         ونؤكد على التزامنا بتلبية مجموعة واسعة من الأذواق والأداء،
@@ -194,86 +203,86 @@
             </div>
 
             <!-- History Section -->
-            <div id="history" class="row m-4 mb-3 mb-lg-5" dir="rtl">
-                <div class="product-grid col-lg-12" >
-                    <h3 class="production-subtitle">تاريخنا</h3>
+            <div id="history" class="row m-4 " dir="rtl">
+                <div class="product-grid col-lg-12 m-4" >
+                    <h2 class="section-title">تاريخنا</h2>
                     <div class="new-arrivals owl-carousel owl-theme position-relative" dir="ltr">
                   <!-- Slide 1 -->
                   <div class="item">
-                     <div class="card p-4 text-center">
+                     <div class="card card-height p-4 text-center">
                         <div class="event-date badge bg-dark">1994-1997</div>
                         <h5 class="fw-bold mt-3">بدايات اوبوليا</h5>
-                        <p class="text-muted">
+                        <p class="text-muted mt-4">
                            تأسست اوبوليا في عام 1994 برؤية لجلب الجمال للتصميم الداخلي وإنتاجه وتركيبه في منازل المملكة العربية السعودية.
                         </p>
                      </div>
                   </div>
                   <!-- Slide 2 -->
                   <div class="item">
-                     <div class="card p-4 text-center">
+                     <div class="card card-height p-4 text-center">
                         <div class="event-date badge bg-dark text-white py-2 px-3">1998-2002</div>
                         <h5 class="fw-bold mt-3">بداية التوسع</h5>
-                        <p class="text-muted">
+                        <p class="text-muted mt-4">
                            بدأنا بالتوسع إلى أسواق جديدة مع التركيز على تصميم مطابخ مميزة وفريدة.
                         </p>
                      </div>
                   </div>
                   <!-- Slide 3 -->
                   <div class="item">
-                     <div class="card p-4 text-center">
+                     <div class="card p-4 card-height text-center">
                         <div class="event-date badge bg-dark text-white py-2 px-3">2003-2009</div>
                         <h5 class="fw-bold mt-3">التطوير والتحديث</h5>
-                        <p class="text-muted">
+                        <p class="text-muted  mt-4">
                            قمنا بدمج أحدث تقنيات التصنيع لتعزيز جودة التصاميم.
                         </p>
                      </div>
                   </div>
                   <!-- Slide 4 -->
                   <div class="item">
-                     <div class="card p-4 text-center">
+                     <div class="card p-4 card-height text-center">
                         <div class="event-date badge bg-dark text-white py-2 px-3">2010-2014</div>
                         <h5 class="fw-bold mt-3">الذهاب إلى العالمية</h5>
-                        <p class="text-muted">
+                        <p class="text-muted mt-4">
                            توسعنا دوليًا من خلال افتتاح مواقع إنتاج في مناطق رئيسية.
                         </p>
                      </div>
                   </div>
                   <!-- Slide 5 -->
                   <div class="item">
-                     <div class="card p-4 text-center">
+                     <div class="card p-4 card-height text-center">
                         <div class="event-date badge bg-dark text-white py-2 px-3">2015-2019</div>
                         <h5 class="fw-bold mt-3">التطورات التكنولوجية</h5>
-                        <p class="text-muted">
+                        <p class="text-muted mt-4" dir="rtl">
                            اعتماد أحدث تقنيات التصنيع الرقمي لتحقيق إنتاج أسرع وأكثر كفاءة.
                         </p>
                      </div>
                   </div>
                   <!-- Slide 6 -->
                   <div class="item">
-                     <div class="card p-4 text-center">
+                     <div class="card p-4 card-height text-center">
                         <div class="event-date badge bg-dark text-white py-2 px-3">2020-2023</div>
                         <h5 class="fw-bold mt-3">الابتكار والتطوير</h5>
-                        <p class="text-muted">
+                        <p class="text-muted  mt-4">
                            تقديم حلول ذكية في التصميمات المخصصة والمستدامة.
                         </p>
                      </div>
                   </div>
                   <!-- Slide 7 -->
                   <div class="item">
-                     <div class="card p-4 text-center">
+                     <div class="card p-4 card-height text-center">
                         <div class="event-date badge bg-dark text-white py-2 px-3">2024</div>
                         <h5 class="fw-bold mt-3">مبادرات الاستدامة</h5>
-                        <p class="text-muted">
+                        <p class="text-muted  mt-4">
                            إطلاق برامج جديدة للحد من التأثير البيئي وتعزيز الاستدامة.
                         </p>
                      </div>
                   </div>
                   <!-- Slide 8 -->
                   <div class="item">
-                     <div class="card p-4 text-center">
+                     <div class="card p-4 card-height text-center">
                         <div class="event-date badge bg-dark text-white py-2 px-3">2025</div>
                         <h5 class="fw-bold mt-3">الاحتفال بمرور 30 عامًا</h5>
-                        <p class="text-muted">
+                        <p class="text-muted  mt-4">
                            مواصلة أوبوليا قيادة مجال التصميم الداخلي.
                         </p>
                      </div>
@@ -282,7 +291,7 @@
             </div>
 
             <!-- Our Team Section -->
-            <div id="team" class="row m-4 mb-3 mb-lg-5" dir="rtl">
+            <div id="team" class="row m-4  mb-lg-5" dir="rtl">
                 <div class="col-lg-12 col-md-12 section-header-team">
                     <h2 class="section-title">فريقنا</h2>
                     <p class="section-description" >
@@ -533,51 +542,10 @@
             <!-- German Quality Slider -->
             <div id="responsibility" class="row align-items-center mb-3 mb-lg-5 mt-lg-5">
                 <!-- Image Slider -->
-                <div class="col-md-12 position-relative p-0">
-                    <div id="germanQualitySlider" class="carousel slide">
-                        <!-- Carousel Images -->
-
-                        <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#germanQualitySlider" data-bs-slide-to="0"
-                                    class="active"></button>
-                                <button type="button" data-bs-target="#germanQualitySlider" data-bs-slide-to="1"></button>
-                                <button type="button" data-bs-target="#germanQualitySlider" data-bs-slide-to="2"></button>
-                        </div>
-
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="{{ asset('Frontend\assets\images\gallery\Responsibility.png') }}" class="d-block w-100 "
-                                    alt="German Quality Kitchen">
-                            </div>
-                            <div class="carousel-item">
-                            <img src="{{ asset('Frontend/assets/images/gallery/Pans.png') }}" class="d-block w-100 "
-                                alt="Luxury Kitchen">
-                            </div>
-                            <div class="carousel-item">
-                            <img src="{{ asset('Frontend/assets/images/gallery/People.png') }}" class="d-block w-100"
-                                alt="Modern Kitchen">
-                            </div>
-                    </div>
-                        </div>
-                        <!-- Navigation Bar (Solid Background) -->
-                        <div class="carousel-controls">
-                            <!-- Previous Button -->
-                            <button class="carousel-control-prev" type="button" data-bs-target="#germanQualitySlider"
-                                data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
-                            </button>
-                            <!-- Indicators -->
-
-                            <!-- Next Button -->
-                            <button class="carousel-control-next" type="button" data-bs-target="#germanQualitySlider" data-bs-slide="next" >
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+               
                 <!-- Text Section -->
                 <div class="col-md-12 text-end text-align-right mt-4">
-                    <h3 class="fw-bold text-success">الجودة الألمانية</h3>
+                    <h3 class="fw-bold text-green">الجودة الألمانية</h3>
                     <p class="text-section">
                         في أوبوليا، نفخر بتقديم تصاميم تعكس الجودة الألمانية المعروفة بدقتها ومتانتها.
                         نستخدم مواد عالية الجودة وتقنيات متطورة مما يضمن لك أثاث منزلي يدوم طويلاً

@@ -211,15 +211,15 @@
                             @if ($order->surveyQuestion)
                                 <p><strong>كيف علمت عن اوبوليا اونلاين؟ </strong> {{ $order->surveyQuestion->hear_about_oppolia }}</p>
                                 <p><strong>متى التاريخ المتوقع للتوصيل؟ </strong> {{ $order->surveyQuestion->expected_delivery_time }}</p>
-                                <p><strong>ما هي ميزانية الزبون؟ </strong>SAR{{ $order->surveyQuestion->client_budget }}</p>
+                                <p><strong>ما هي ميزانية العميل؟ </strong>SAR{{ $order->surveyQuestion->client_budget }}</p>
                                 <p><strong>ما هي أبعاد المطبخ المطلوب تصميمه؟ </strong> {{ $order->surveyQuestion->kitchen_room_size }} متر مربع</p>
                                 <p><strong>ما هو مغزى المطبخ؟</strong> {{ $order->surveyQuestion->kitchen_use }}</p>
-                                <p><strong>ما هو نوع المطبخ الذي طلبه الزبون؟ </strong> {{ $order->surveyQuestion->kitchen_style_preference }}</p>
+                                <p><strong>ما هو نوع المطبخ الذي طلبه العميل؟ </strong> {{ $order->surveyQuestion->kitchen_style_preference }}</p>
                                 <p><strong>ما هي المستلزمات اللازمة للزبون؟ </strong> {{ $order->surveyQuestion->appliances_needed }}</p>
-                                <p><strong>ما هو نوع المغسلة التي طلبها الزبون؟</strong> {{ $order->surveyQuestion->sink_type }}</p>
-                                <p><strong>ما نوع الكاونتر التي طلبها الزبون؟ </strong> {{ $order->surveyQuestion->worktop_preference }}</p>
-                                <p><strong>معلومات عامة عن مكان العمل, المنزل, الزبون, الأمور المالية, الأمور العائلية؟ </strong> {{ $order->surveyQuestion->general_info }}</p>
-                                <p><strong>أي سؤال أو استفسار تم توجيهه من الزبون؟ </strong> {{ $order->surveyQuestion->customer_concerns }}</p>
+                                <p><strong>ما هو نوع المغسلة التي طلبها العميل؟</strong> {{ $order->surveyQuestion->sink_type }}</p>
+                                <p><strong>ما نوع الكاونتر التي طلبها العميل؟ </strong> {{ $order->surveyQuestion->worktop_preference }}</p>
+                                <p><strong>معلومات عامة عن مكان العمل, المنزل, العميل, الأمور المالية, الأمور العائلية؟ </strong> {{ $order->surveyQuestion->general_info }}</p>
+                                <p><strong>أي سؤال أو استفسار تم توجيهه من العميل؟ </strong> {{ $order->surveyQuestion->customer_concerns }}</p>
                                 <p><strong>الخطوات القادمة و مخططاتك؟ </strong> {{ $order->surveyQuestion->next_steps_strategy }}</p>
                                 <p><strong>تفاصيل التذكير:</strong> {{ $order->surveyQuestion->reminder_details }}</p>
                                 <p><strong>احتمالية إغلاق الصفقة:</strong> {{ $order->surveyQuestion->deal_closing_likelihood }}</p>

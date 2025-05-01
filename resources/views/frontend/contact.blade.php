@@ -11,6 +11,10 @@
         a{
             color: #0a4740;
         }
+
+        .svg-green  {
+            margin: 5px;
+        }
     </style>
 
     <div class="container-fluid about-section p-0 position-relative">
@@ -78,8 +82,8 @@
 
                         <!-- Email -->
                         <div class="mb-4">
-                            <label class="form-label fw-bold contact-titles">البريد الإلكتروني</label>
-                            <input type="email" class="form-control" name="email" placeholder="يرجى إدخال البريد الإلكتروني" required>
+                        <label class="form-label fw-bold contact-titles">الرسالة</label>
+                            <textarea class="form-control" name="message" placeholder="يرجى مشاركة تفاصيل استفسارك معنا لمزيد من المعلومات التفصيلية مستعدون على خدمتك بشكل أفضل" required></textarea>
                         </div>
                     </div>
 
@@ -100,8 +104,8 @@
 
                         <!-- Message -->
                         <div class="mb-4">
-                            <label class="form-label fw-bold contact-titles">الرسالة</label>
-                            <textarea class="form-control" name="message" placeholder="يرجى مشاركة تفاصيل استفسارك معنا لمزيد من المعلومات التفصيلية مستعدون على خدمتك بشكل أفضل" required></textarea>
+                            <label class="form-label fw-bold contact-titles">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" name="email" placeholder="يرجى إدخال البريد الإلكتروني" required>
                         </div>
                     </div>
                 </div>
@@ -115,12 +119,21 @@
 
         <!-- Contact Details Section -->
         <!-- Contact Details Section - Inline -->
-        <div class="container p-5 text-end" dir="rtl">
+        <div class="container p-2 text-end mb-4" >
             <h5 class="fw-bold mb-3">معلومات التواصل المباشر:</h5>
             <div class="d-flex flex-wrap gap-4 justify-content-end align-items-center">
-                <p class="mb-0"><strong>الإيميل:</strong> <a href="mailto:info@oppoliaksa.com">info@oppoliaksa.com</a></p>
-                <p class="mb-0"><strong>واتساب:</strong> <a href="https://wa.me/966564444343" target="_blank">+966564444343</a></p>
-                <p class="mb-0"><strong>الهاتف:</strong> <a href="tel:+966564444343">+966564444343</a></p>
+                <p class="mb-0"> 
+                <img src="{{ asset('Frontend/assets/images/icons/Email.png') }}" class="svg-green" alt="Email Icon" width="20" height="20">
+                <a href="mailto:info@oppoliaksa.com">info@oppoliaksa.com</a>
+            </p>
+                <p class="mb-0"> 
+                <img src="{{ asset('Frontend/assets/images/icons/Whatsapp_icon.png') }}" class="svg-green" alt="WhatsApp Icon" width="20" height="20">
+                <a href="https://wa.me/966564444343" target="_blank" dir="ltr">+966564444343</a>
+            </p>
+                <p class="mb-0">
+                <img src="{{ asset('Frontend/assets/images/icons/Phone.png') }}" class="svg-green" alt="Phone Icon" width="20" height="20">
+                <a href="tel:+966564444343" dir="ltr">+966564444343</a>
+            </p>
             </div>
         </div>
 

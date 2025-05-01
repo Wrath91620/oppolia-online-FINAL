@@ -40,8 +40,7 @@ body {
 	font-size: 14px;
 	letter-spacing: .5px;
  /*	font-weight: 500; */
-	font-family:"Ubuntu Sans", system-ui ;
-	background-color: #f3f3f3;
+	font-family: Tajawal, sans-serif !important;	
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {

@@ -37,7 +37,7 @@
                                  class="img-fluid rounded-4"
                                  alt="Product Image">
 
-                            <div class="designer-info mt-3">
+                            <div class="designer-info mt-3" style="font-size: 16px !important;">
                                 <h5>
                                     @if(App::getLocale() == 'ar')
                                         {{ $product->name_ar ?? $product->name }}
