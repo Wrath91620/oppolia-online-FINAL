@@ -452,15 +452,16 @@
 
 /* Responsive Subtitle */
 .about-subtitle {
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 36px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
 }
 
 /* Responsive Paragraph Text */
 .about-para {
+    color: #2F2F2F;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 40px;
 }
 
@@ -527,11 +528,13 @@
 
 
 .section-header {
-    background: rgba(178, 204, 199, 0.5);
-    /* Light green transparent background */
+
+    background-image: url("../images/gallery/ARlogo-bg.webp");  
+    background-color: #D3E0DD;
     padding: 15px;
-    border-radius: 10px;
-    /* Adds rounded corners */
+    background-position:top 10px left 10px;
+    background-repeat: no-repeat;
+    
     position: relative;
     height: auto;
     z-index: 1;
@@ -577,21 +580,19 @@
 /* General Styles */
 .section-about-title {
 
-    direction: rtl;
     padding: 15px;
-    font-size: 32px;
-    font-weight: bold;
-    color: #024731;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0A4740;
     /* Dark green shade */
 
 }
 
 .section-description {
-    direction: rtl;
-    font-size: 17.6px;
-    color: #555;
+    font-size: 20px;
+    color: #2f2f2f;
     max-width: 100%;
-    margin: 0 auto 20px;
+    padding: 15px;
 }
 
 .section-image {
@@ -625,9 +626,9 @@
 }
 
 .feature-title {
-    font-size: 17px;
-    font-weight: bold;
-    color: rgba(36, 77, 77, 1);
+    font-size: 20px;
+    font-weight: 700;
+    color: #244D4D;
     direction: rtl;
 
 }
@@ -647,11 +648,11 @@
 }
 
 .vision-description {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
     text-align: right;
-    color: rgba(243, 243, 243, 1);
+    color: #f3f3f3;
 }
 
 
@@ -669,38 +670,52 @@
 
 /* Section Background */
 .production-lines {
-    background: rgba(28, 28, 28, 0.8);
-    /* Dark background */
-    color: white;
-    padding: 40px;
+    background: #E5E5EA;
+   
 
 }
 
-.production-li {
-    font-size: 16px;
+.production-para { 
+    color: var(--Text, #2F2F2F);
+    text-align: right;
+    font-size: var(--Font-Size-20, 20px);
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+}
 
+.production-li {
+    color: var(--Text, #2F2F2F);
+    text-align: right;
+    font-size: var(--Font-Size-20, 20px);
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+}
+
+.production-bg { 
+    background-image: url("../images/gallery/production.webp");  
+    background-position: left;
 }
 
 /* Text Styling */
 .section-title {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: bold;
     color: #0A4740;
-    /* Dark green heading */
+
 }
 
 .sub-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: #0A4740
+    font-size: 20px;
+    font-weight: 700;
+    color: #2f2f2f;
 }
 
 /* Production Capacity Box */
 .production-capacity {
-    background: white;
+    background: #E5E5EA;
     padding: 35px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     color: rgba(10, 71, 64, 1);
+
 }
 
 .section-description-production {
@@ -708,11 +723,13 @@
 }
 
 .production-subtitle {
-    font-weight: 500;
-    font-size: 30px;
-    color: rgba(10, 71, 64, 1);
-
+    color: var(--Text, #2F2F2F);
+    text-align: right; 
+    font-size: var(--Font-Size-20, 20px);
+    font-weight: 700;
+    line-height: normal;
 }
+
 
 
 
