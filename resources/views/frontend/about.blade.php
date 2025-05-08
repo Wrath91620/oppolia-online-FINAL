@@ -63,15 +63,138 @@
         transform: translate(0, 0) rotate(90deg);
         opacity: 0.25;
     }
+
+    .illu-container {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        /* ← match your card height */
+        overflow: visible;
+    }
+
+    /* 1) Logo mark centered under everything */
+    .logomark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 200px;
+        /* ← tweak to match your mark */
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* 2&3) Dot patterns & 4) trophies */
+    .dots,
+    .awards {
+        position: absolute;
+        transition: transform 0.6s ease-in-out;
+        will-change: transform;
+    }
+
+    /* Top‐left grid */
+    .dots-top {
+        top: 20px;
+        left: 20px;
+        width: 80px;
+        height: 80px;
+        transform: translateY(0);
+        z-index: 2;
+    }
+
+    /* Bottom‐right grid */
+    .dots-bottom {
+        bottom: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        transform: translateY(0);
+        z-index: 2;
+    }
+
+    /* …keep your .illu-container, .logomark and .dots rules… */
+
+    /* ========== Trophies ========== */
+    .awards {
+        position: absolute;
+        top: 100%;
+        left: 45%;
+        /* only move ~100px over from center (
+                         tweak this value to sit right on the circle edge) */
+        transform: translate(100px, -50%);
+        transition: transform 0.6s ease-in-out;
+        pointer-events: none;
+        z-index: 3;
+        /* collapse container so children don’t push it wide */
+        width: 0;
+        height: 0;
+    }
+
+    /* stack the two SVGs/images exactly on top of each other */
+    .awards img {
+        position: absolute;
+        bottom: 0;
+        width: auto;
+        height: 200px;
+        /* your desired height */
+        transform-origin: bottom center;
+        /* scale from the bottom */
+        transition: transform 0.6s ease-in-out;
+    }
+
+    /* front trophy (the smaller/foreground one) */
+    .awards img:nth-child(1) {
+        left: -20px;
+        z-index: 4;
+        transform: scale(1.1);
+    }
+
+    /* back trophy starts at normal size */
+    .awards img:nth-child(2) {
+        left: 0;
+        z-index: 2;
+        transform: scale(1);
+    }
+
+    /* on hover: swap scales */
+    .illu-container:hover .awards img:nth-child(1) {
+        transform: scale(1);
+    }
+
+    .illu-container:hover .awards img:nth-child(2) {
+        transform: scale(1.1);
+    }
+
+    /* ========== Hover ========== */
+    /* swing the trophies to the left of the logo */
+    .illu-container:hover .awards {
+        transform: translate(-50px, -50%);
+    }
+
+
+
+
+    /* Hover: flip everything */
+    /* slide top grid down */
+    .illu-container:hover .dots-top {
+        transform: translateY(140px);
+    }
+
+    /* slide bottom grid up */
+    .illu-container:hover .dots-bottom {
+        transform: translateY(-140px);
+    }
+
+    /* swing trophies to the LEFT of logo */
 </style>
 
 
-<div class="banner-wrapper position-relative">
+<div class="container-fluid about-section position-relative">
     <!-- Banner Image (Full Width) -->
     <div class="row">
         <div class="col-12 p-0">
             <img src="{{ asset('Frontend/assets/images/banners/About-Banner.png') }}" alt="About Us Banner"
-                class="img-fluid w-100">
+                class="img-fluid">
         </div>
     </div>
     <!-- Centered Text Overlay -->
@@ -81,7 +204,7 @@
 </div>
 
 <!-- Main Content Section -->
-<section class="container-fluid g-5" style="background-color:  rgba(243, 243, 243, 1);">
+<section class="container-fluid g-5" style="   background-color:  rgba(243, 243, 243, 1);">
     <div class="row p-4">
         <!-- Sidebar Column -->
         <div class="col-lg-2 order-lg-first d-none d-lg-block" dir="rtl">
@@ -175,8 +298,8 @@
                 </div>
                 <div class="row p-0">
                     <!-- <div class="col-lg-5 col-sm-12">
-                                <img src="{{ asset('Frontend\assets\images\gallery\about.png') }}" alt="Modern Kitchen" class="img-fluid rounded section-image">
-                            </div> -->
+                                                                                                            <img src="{{ asset('Frontend\assets\images\gallery\about.png') }}" alt="Modern Kitchen" class="img-fluid rounded section-image">
+                                                                                                        </div> -->
                     <div class="col-lg-12 col-sm-12">
                         <div class="row justify-content-between p-4">
                             <div class="col-md-4 text-right feature-box">
@@ -274,7 +397,8 @@
 
                         <!-- Image Section -->
                         <div class="col-lg-4 col-md-12 p-0 d-flex align-items-stretch">
-                            <img src="{{ asset('Frontend/assets/images/gallery/production.webp') }}" alt="Production Line" class="img-fluid" style="object-fit: fill;" ;>
+                            <img src="{{ asset('Frontend/assets/images/gallery/production.webp') }}"
+                                alt="Production Line" class="img-fluid" style="object-fit: fill;" ;>
                         </div>
 
                     </div>
@@ -292,14 +416,16 @@
                         <!-- Slide 1 -->
                         <div class="item">
                             <div class="card card-height p-4 text-end">
-                                <div class="event-date badge">1994–1997</div>
+                                <div class="event-date badge text-center">1994–1997</div>
                                 <h5 class="card-title mt-3">بدايات اوبوليا</h5>
                                 <p class="card-description" dir="rtl">
-                                    تأسست اوبوليا في عام 1994 برؤية لجلب الجمال للتصميم الداخلي وإنتاجه وتركيبه في منازل المملكة العربية السعودية.
+                                    تأسست اوبوليا في عام 1994 برؤية لجلب الجمال للتصميم الداخلي وإنتاجه وتركيبه في منازل
+                                    المملكة العربية السعودية.
                                 </p>
                             </div>
                             <svg class="slide-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 53 51 150">
-                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z" fill="#509F96" />
+                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z"
+                                    fill="#509F96" />
                             </svg>
                         </div>
 
@@ -313,7 +439,8 @@
                                 </p>
                             </div>
                             <svg class="slide-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 53 51 150">
-                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z" fill="#509F96" />
+                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z"
+                                    fill="#509F96" />
                             </svg>
                         </div>
 
@@ -327,7 +454,8 @@
                                 </p>
                             </div>
                             <svg class="slide-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 53 51 150">
-                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z" fill="#509F96" />
+                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z"
+                                    fill="#509F96" />
                             </svg>
                         </div>
 
@@ -341,7 +469,8 @@
                                 </p>
                             </div>
                             <svg class="slide-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 53 51 150">
-                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z" fill="#509F96" />
+                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z"
+                                    fill="#509F96" />
                             </svg>
                         </div>
 
@@ -355,7 +484,8 @@
                                 </p>
                             </div>
                             <svg class="slide-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 53 51 150">
-                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z" fill="#509F96" />
+                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z"
+                                    fill="#509F96" />
                             </svg>
                         </div>
 
@@ -369,7 +499,8 @@
                                 </p>
                             </div>
                             <svg class="slide-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 53 51 150">
-                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z" fill="#509F96" />
+                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z"
+                                    fill="#509F96" />
                             </svg>
                         </div>
 
@@ -383,7 +514,8 @@
                                 </p>
                             </div>
                             <svg class="slide-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 53 51 150">
-                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z" fill="#509F96" />
+                                <path d="M20.9695 128L51 59.7244L45.0457 53L0 128L45.0457 203L51 196.017L20.9695 128Z"
+                                    fill="#509F96" />
                             </svg>
                         </div>
 
@@ -490,54 +622,90 @@
 
             <!-- Achievements Section -->
 
-
-            <div id="achievements" class="row m-4">
+            <div id="achievements" class=" m-4">
                 <h2 class="section-title p-3 m-0">إنجازاتنا</h2>
+                <!-- Row 1: illustration (left) + heading & big card (right) -->
+                <div class="row align-items-center g-4">
+                    <!-- Left: graphic slot -->
 
-                <!-- Right Side: Market Value Box (6 Columns, Takes Full Height) -->
-                <div class="col-lg-4 d-flex align-items-stretch">
-                    <div class="market-value-box d-flex flex-column w-100 h-100">
-                        <h6 class="market-title">القيمة السوقية</h6>
-                        <h3 class="count">15.3 مليار دولار أمريكي</h3>
-                        <p>في يناير 2021، تجاوزت قيمة مشاريعنا الإجمالية 15.3 مليار دولار أمريكي، مما يعكس النمو
-                            المستدام لعملائنا.</p>
+
+                    <!-- Right: big value card -->
+                    <div class="col-lg-6">
+                        <div class="achievement-card green-border d-flex flex-column h-100 p-4">
+                            <h6 class="market-title">القيمة السوقية</h6>
+                            <h3 class="count">15.3 مليار دولار أمريكي</h3>
+                            <p>
+                                في يناير 2021، تجاوزت قيمة مشاريعنا الإجمالية 15.3 مليار دولار أمريكي،
+                                مما يعكس النمو المستدام لعملائنا.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-none d-flex  justify-content-center">
+                        <div class="illu-container">
+                            <!-- 1) your circle+roof SVG as a true <img> or inline SVG -->
+                            <img src="Frontend/assets/images/gallery/logo.webp" alt="" class="logomark">
+
+                            <!-- 2) top‐left dot grid -->
+                            <img src="Frontend/assets/images/icons/Dots-illu-top.webp" alt="" class="dots dots-top">
+
+                            <!-- 3) bottom‐right dot grid -->
+                            <img src="Frontend/assets/images/icons/Dots-illu-bottom.webp" alt="" class="dots dots-bottom">
+
+                            <!-- 4) trophies stacked -->
+                            <div class="awards">
+                                <img src="Frontend/assets/images/gallery/red-dot.webp" alt="Back trophy">
+                                <img src="Frontend/assets/images/gallery/muse.webp" alt="Front trophy">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <!-- Left Side: 4 Achievement Cards (6 Columns in Large Screens) -->
-                <div class="col-lg-8">
-                    <div class="row g-4">
-                        <div class="col-md-6 d-flex">
-                            <div class="achievement-card green-border d-flex flex-column w-100 h-100">
-                                <h6 class="market-title">منزل مؤثث بشكل كامل</h6>
-                                <h3 class="count">+ 40</h3>
-                                <p>نعمل دائمًا لتحسين مساحة مستخدمينا وتعزيز استراتيجيات الأثاث المثالية.</p>
-                            </div>
+
+                <!-- Row 2: two small cards -->
+                <div class="row g-4 mt-4">
+                    <div class="col-lg-6">
+                        <div class="achievement-card green-border d-flex flex-column w-100 p-4">
+                            <h6 class="market-title">جائزة MUSE Design</h6>
+                            <h3 class="count">+1 MUSE Design Award</h3>
+                            <p>حصلنا على جائزة MUSE لعام 2023 تكريماً لابتكاراتنا.</p>
                         </div>
-                        <div class="col-md-6 d-flex">
-                            <div class="achievement-card green-border d-flex flex-column w-100 h-100">
-                                <h6 class="market-title">صالة عرض</h6>
-                                <h3 class="count">+ 7,000</h3>
-                                <p>نقوم بتغطية أكثر من 7,000 صالة عرض حول العالم، وهذا يعزز النمو التجاري والتواصل
-                                    الفعال.</p>
-                            </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="achievement-card green-border d-flex flex-column w-100 p-4">
+                            <h6 class="market-title">جائزة Red-dot</h6>
+                            <h3 class="count">+1 Red-dot Award</h3>
+                            <p>تم منحنا جائزة Red-dot لعام 2021.</p>
                         </div>
-                        <div class="col-md-6 d-flex">
-                            <div class="achievement-card green-border d-flex flex-column w-100 h-100">
-                                <h6 class="market-title">MUSE Design Award جائزة</h6>
-                                <h3 class="count">+1 MUSE Design Award</h3>
-                                <p>حصلنا على جائزة MUSE Design لعام 2023 تكريماً لابتكاراتنا في التصميم.</p>
-                            </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: two small cards -->
+                <div class="row g-4 mt-4">
+                    <div class="col-lg-6">
+                        <div class="achievement-card green-border d-flex flex-column w-100 p-4">
+                            <h6 class="market-title">صالة عرض</h6>
+                            <h3 class="count">+7,000</h3>
+                            <p>
+                                نغطي أكثر من 7,000 صالة عرض حول العالم، مما يعزز النمو التجاري
+                                والتواصل الفعال.
+                            </p>
                         </div>
-                        <div class="col-md-6 d-flex">
-                            <div class="achievement-card green-border d-flex flex-column w-100 h-100">
-                                <h6 class="market-title">Red-dot Award جائزة</h6>
-                                <h3 class="count">+1 Red-dot Award</h3>
-                                <p>تم منحنا جائزة Red-dot لعام 2021.</p>
-                            </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="achievement-card green-border d-flex flex-column w-100 p-4">
+                            <h6 class="market-title">منزل مؤثث بشكل كامل</h6>
+                            <h3 class="count">+40</h3>
+                            <p>
+                                نعمل دائمًا على تحسين مساحة مستخدمينا وتعزيز استراتيجيات الأثاث
+                                المثالية.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+
+
 
             <!-- Suppliers Section -->
             <div id="suppliers" class="row m-4">
@@ -600,6 +768,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 @endsection
