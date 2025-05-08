@@ -66,12 +66,12 @@
 </style>
 
 
-<div class="container-fluid about-section position-relative">
+<div class="banner-wrapper position-relative">
     <!-- Banner Image (Full Width) -->
     <div class="row">
         <div class="col-12 p-0">
             <img src="{{ asset('Frontend/assets/images/banners/About-Banner.png') }}" alt="About Us Banner"
-                class="img-fluid">
+                class="img-fluid w-100">
         </div>
     </div>
     <!-- Centered Text Overlay -->
@@ -81,7 +81,7 @@
 </div>
 
 <!-- Main Content Section -->
-<section class="container-fluid g-5" style="   background-color:  rgba(243, 243, 243, 1);">
+<section class="container-fluid g-5" style="background-color:  rgba(243, 243, 243, 1);">
     <div class="row p-4">
         <!-- Sidebar Column -->
         <div class="col-lg-2 order-lg-first d-none d-lg-block" dir="rtl">
@@ -570,7 +570,7 @@
                                 <div class="col-lg-4 d-flex">
                                     <div
                                         class="supplier-card d-flex flex-column align-items-center justify-content-center w-100">
-                                        <img src="{{ asset('Frontend/assets/images/gallery/Suspa (1).png') }}"
+                                        <img src="{{ asset('Frontend/assets/images/icons/suspa.webp') }}"
                                             alt="Suspa Logo" class="supplier-logo">
                                         <p>هي شركة تصنيع مبتكرة لأنظمة الغاز</p>
                                     </div>
@@ -579,7 +579,7 @@
                                 <div class="col-lg-6 d-flex">
                                     <div
                                         class="supplier-card d-flex flex-column align-items-center justify-content-center w-100">
-                                        <img src="{{ asset('Frontend/assets/images/gallery/EEGGER (1).png') }}"
+                                        <img src="{{ asset('Frontend/assets/images/icons/eger.webp') }}"
                                             alt="EEGGER Logo" class="supplier-logo">
                                         <p>من الألواح الخشبية عالية الجودة إلى المرايا التي تحدد الاتجاه للأثاث</p>
                                     </div>
@@ -587,7 +587,7 @@
                                 <div class="col-lg-6 d-flex">
                                     <div
                                         class="supplier-card d-flex flex-column align-items-center justify-content-center w-100">
-                                        <img src="{{ asset('Frontend/assets/images/gallery/Bostik.png') }}"
+                                        <img src="{{ asset('Frontend/assets/images/icons/bostik.webp') }}"
                                             alt="Bostik Logo" class="supplier-logo">
                                         <p>الابتكار هو هوية بوستيك والتكنولوجيا هي حجر الأساس في نجاحهم</p>
                                     </div>

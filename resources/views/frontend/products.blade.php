@@ -9,12 +9,12 @@
     }
 </style>
 
-<div class="container-fluid about-section position-relative">
+<div class="banner-wrapper position-relative">
     <!-- Banner Image (Full Width) -->
     <div class="row">
         <div class="col-12 p-0">
             <img src="{{ asset('Frontend/assets/images/banners/Products.webp') }}" alt="Products Banner"
-                class="img-fluid">
+                class="img-fluid w-100">
         </div>
     </div>
     <!-- Centered Text Overlay -->

@@ -3,40 +3,41 @@
 @section('content')
 
 
-   
-<div class="container-fluid about-section position-relative">
+
+<div class="banner-wrapper  position-relative">
     <!-- Banner Image (Full Width) -->
     <div class="row">
         <div class="col-12 p-0">
             <img src="{{ asset('Frontend/assets/images/banners/Designer.webp') }}" alt="Designer Banner"
-                class="img-fluid">
+                class="img-fluid w-100">
+        </div>
+        <!-- Centered Text Overlay -->
+        <div class="about-text-overlay">
+            <h1 class="about-text">مصممي اوبوليا</h1>
         </div>
     </div>
-    <!-- Centered Text Overlay -->
-    <div class="about-text-overlay">
-        <h1 class="about-text">مصممي اوبوليا</h1>
-    </div>
 </div>
-<div class="container p-4" >
-<div class="row row-cols-1 row-cols-md-3 g-4 m-3">
 
-@foreach($designer as $designer)
-<div class="col">
+<div class="container p-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4 m-3">
+
+        @foreach($designer as $designer)
+        <div class="col">
             <div class="designer-card p-4"
-                 data-bs-toggle="modal"
-                 data-bs-target="#designerModal"
-                 data-name="{{ $designer->user->name }}"
-                 data-image="{{ asset($designer->profile_image ? 'storage/' . $designer->profile_image : 'storage/profile_images/ProfilePlaceholder.jpg') }}"
-                 data-bio="{{ $designer->description_ar }}"
-                 data-experience="{{ $designer->experience_years }}"
-                 data-rating="{{ $designer->rating }}"
-                 data-portfolio="{{ $designer->portfolio_images }}">
+                data-bs-toggle="modal"
+                data-bs-target="#designerModal"
+                data-name="{{ $designer->user->name }}"
+                data-image="{{ asset($designer->profile_image ? 'storage/' . $designer->profile_image : 'storage/profile_images/ProfilePlaceholder.jpg') }}"
+                data-bio="{{ $designer->description_ar }}"
+                data-experience="{{ $designer->experience_years }}"
+                data-rating="{{ $designer->rating }}"
+                data-portfolio="{{ $designer->portfolio_images }}">
                 <img src="{{asset($designer->profile_image ? 'storage/' . $designer->profile_image : 'storage/profile_images/ProfilePlaceholder.jpg') }}" class="img-fluid rounded-4" alt="Designer Profile Picture">
                 <div class="designer-info mt-3">
                     <h5>{{ $designer->user->name }}</h5>
                 </div>
             </div>
-</div>
+        </div>
         @endforeach
     </div>
 </div>
@@ -85,78 +86,91 @@
 
 
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".designer-card").forEach(card => {
-        card.addEventListener("click", function () {
-            // Get designer data attributes
-            let name = this.getAttribute("data-name") || "غير معروف";
-            let image = this.getAttribute("data-image") || "/ProfilePlaceholder.jpg";
-            let bio = this.getAttribute("data-bio") || "لا يوجد وصف متاح";
-            let experience = this.getAttribute("data-experience") || "غير معروف";
-            let rating = this.getAttribute("data-rating") || "غير متاح";
-            let portfolioJson = this.getAttribute("data-portfolio");
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".designer-card").forEach(card => {
+            card.addEventListener("click", function() {
+                // Get designer data attributes
+                let name = this.getAttribute("data-name") || "غير معروف";
+                let image = this.getAttribute("data-image") || "/ProfilePlaceholder.jpg";
+                let bio = this.getAttribute("data-bio") || "لا يوجد وصف متاح";
+                let experience = this.getAttribute("data-experience") || "غير معروف";
+                let rating = this.getAttribute("data-rating") || "غير متاح";
+                let portfolioJson = this.getAttribute("data-portfolio");
 
-            console.log("Clicked Designer:", { name, image, bio, experience, rating, portfolioJson });
+                console.log("Clicked Designer:", {
+                    name,
+                    image,
+                    bio,
+                    experience,
+                    rating,
+                    portfolioJson
+                });
 
-            // Update designer modal with data
-            document.getElementById("designerName").innerText = name;
-            document.getElementById("designerImage").src = image;
-            document.getElementById("designerBio").innerText = bio;
-            document.getElementById("designerExperience").innerText = experience;
-            document.getElementById("designerRating").innerText = rating;
+                // Update designer modal with data
+                document.getElementById("designerName").innerText = name;
+                document.getElementById("designerImage").src = image;
+                document.getElementById("designerBio").innerText = bio;
+                document.getElementById("designerExperience").innerText = experience;
+                document.getElementById("designerRating").innerText = rating;
 
-            // Handle portfolio images dynamically
-            let portfolioContainer = $("#portfolioContainer");
+                // Handle portfolio images dynamically
+                let portfolioContainer = $("#portfolioContainer");
 
-            // **Destroy Owl Carousel if already initialized**
-            if (portfolioContainer.hasClass("owl-loaded")) {
-                portfolioContainer.trigger("destroy.owl.carousel").removeClass("owl-loaded");
-            }
-
-            portfolioContainer.empty(); // Clear old images
-
-            if (portfolioJson) {
-                let portfolioImages = [];
-                try {
-                    portfolioImages = JSON.parse(portfolioJson);
-                } catch (error) {
-                    console.error("Error parsing portfolio JSON:", error);
-                    return;
+                // **Destroy Owl Carousel if already initialized**
+                if (portfolioContainer.hasClass("owl-loaded")) {
+                    portfolioContainer.trigger("destroy.owl.carousel").removeClass("owl-loaded");
                 }
 
-                // Append new images to the carousel
-                portfolioImages.forEach(imagePath => {
-                    let itemDiv = `<div class="item">
+                portfolioContainer.empty(); // Clear old images
+
+                if (portfolioJson) {
+                    let portfolioImages = [];
+                    try {
+                        portfolioImages = JSON.parse(portfolioJson);
+                    } catch (error) {
+                        console.error("Error parsing portfolio JSON:", error);
+                        return;
+                    }
+
+                    // Append new images to the carousel
+                    portfolioImages.forEach(imagePath => {
+                        let itemDiv = `<div class="item">
                         <img src="/storage/${imagePath}" class="img-fluid rounded" style="width: 150px; cursor: pointer;" onclick="showPortfolioImage('/storage/${imagePath}')">
                     </div>`;
-                    portfolioContainer.append($(itemDiv));
-                });
+                        portfolioContainer.append($(itemDiv));
+                    });
 
-                // **Reinitialize Owl Carousel**
-                portfolioContainer.owlCarousel({
-                    loop: false,
-                    margin: 10,
-                    nav: true,
-                    dots: false,
-                    responsive: {
-                        0: { items: 1 },
-                        600: { items: 2 },
-                        1000: { items: 3 }
-                    }
-                });
-            }
+                    // **Reinitialize Owl Carousel**
+                    portfolioContainer.owlCarousel({
+                        loop: false,
+                        margin: 10,
+                        nav: true,
+                        dots: false,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 2
+                            },
+                            1000: {
+                                items: 3
+                            }
+                        }
+                    });
+                }
 
-            // Open the designer modal
-            $("#designerModal").modal("show");
+                // Open the designer modal
+                $("#designerModal").modal("show");
+            });
         });
     });
-});
 
-// Function to show the full image in the portfolio modal
-function showPortfolioImage(imageSrc) {
-    $("#portfolioImage").attr("src", imageSrc);
-    $("#portfolioModal").modal("show");
-}
+    // Function to show the full image in the portfolio modal
+    function showPortfolioImage(imageSrc) {
+        $("#portfolioImage").attr("src", imageSrc);
+        $("#portfolioModal").modal("show");
+    }
 </script>
 
 @endsection
