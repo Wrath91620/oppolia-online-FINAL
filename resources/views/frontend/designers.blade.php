@@ -2,6 +2,21 @@
 @section('title')مصممي اوبوليا @endsection
 @section('content')
 
+
+   
+<div class="container-fluid about-section position-relative">
+    <!-- Banner Image (Full Width) -->
+    <div class="row">
+        <div class="col-12 p-0">
+            <img src="{{ asset('Frontend/assets/images/banners/Designer.webp') }}" alt="Designer Banner"
+                class="img-fluid">
+        </div>
+    </div>
+    <!-- Centered Text Overlay -->
+    <div class="about-text-overlay">
+        <h1 class="about-text">مصممي اوبوليا</h1>
+    </div>
+</div>
 <div class="container p-4" >
 <div class="row row-cols-1 row-cols-md-3 g-4 m-3">
 
