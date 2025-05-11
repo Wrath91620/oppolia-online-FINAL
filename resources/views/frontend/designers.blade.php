@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12 p-0">
             <img src="{{ asset('Frontend/assets/images/banners/Designer.webp') }}" alt="Designer Banner"
-                class="img-fluid">
+                class="img-fluid w-100">
         </div>
     <!-- Centered Text Overlay -->
     <div class="about-text-overlay">
